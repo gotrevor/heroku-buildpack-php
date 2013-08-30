@@ -69,10 +69,10 @@ fi
 
 echo "All done.  Will put composer here."
 
-pushd /app/www/laravelSample/
-composer install
+#pushd /app/www/laravelSample/
+#composer install
 
-echo "Composer composed."
+#echo "Composer composed."
 
 
 
