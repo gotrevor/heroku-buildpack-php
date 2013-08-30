@@ -42,7 +42,7 @@ echo "-----> from $OPT_BUILDPACK_URL"
 curl --silent --max-time 60 --location "$OPT_BUILDPACK_URL" | tar xz
 
 echo "-----> Now over-writing with the newer, but smaller, buildpack..."
-curl --silent --max-time 60 --location "$OPT_PHP_BP_URL" | tar 
+curl --silent --max-time 60 --location "$OPT_PHP_BP_URL" | tar xz
 
 # update config files
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
