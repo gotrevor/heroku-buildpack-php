@@ -38,7 +38,7 @@ Pre-compiling binaries
 
 After building the binary below, update the OPT_BUILDPACK_URL variable in bin/compile to point to the url of the vulcan binary from Heroku
 
-    vulcan build -v -s ./build -p /tmp/build -c "./vulcan.sh"
+    vulcan build -v -s build -p /tmp/build -c "./vulcan.sh"
 
 Hacking
 -------

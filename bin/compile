@@ -11,7 +11,10 @@ PHP_VERSION="5.5.3"
 PHP_PATH="php"
 BUILDPACK_VERSION="2.0-a7"
 #OPT_BUILDPACK_URL="http://vulcan-wlian.herokuapp.com/output/3ab52c5f-d762-4d26-88ec-0410e0cb57bc"
+#below includes apache & everything except php-pdo-postgres support.
 OPT_BUILDPACK_URL="http://gotrevor7.herokuapp.com/output/399dd790-773c-46ed-a762-3cd23b39132f"
+#below includes PHP with pg-pdo support: (plus other stuff, but not apache)
+OPT_PHP_BP_URL="http://gotrevor7.herokuapp.com/output/e696246e-d0ec-40a3-a1a1-e3b38f442b8a"
 
 BIN_DIR=$(dirname $0)
 BUILD_DIR=$1
@@ -37,6 +40,9 @@ fi
 echo "-----> Extracting Apache $APACHE_VERSION PHP $PHP_VERSION build $BUILDPACK_VERSION"
 echo "-----> from $OPT_BUILDPACK_URL"
 curl --silent --max-time 60 --location "$OPT_BUILDPACK_URL" | tar xz
+
+echo "-----> Now over-writing with the newer, but smaller, buildpack..."
+curl --silent --max-time 60 --location "$OPT_PHP_BP_URL" | tar 
 
 # update config files
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
