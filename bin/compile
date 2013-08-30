@@ -60,6 +60,8 @@ echo "Installing Composer binary"
 curl -s https://getcomposer.org/installer | $BUILD_DIR/bin/php -- --install-dir=bin
 mv bin/composer.phar bin/composer
 
+export PATH="$PATH:$BUILD_DIR"
+echo Path now: $PATH
 if [ -f $BUILD_DIR/www/composer.json ]; then
   echo "Installing Composer dependencies"
   cd $BUILD_DIR/www
