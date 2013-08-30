@@ -128,3 +128,5 @@ if [ -d $BUILD_DIR/www/.heroku -a -f $BUILD_DIR/www/.heroku/compile.sh ]; then
     /usr/bin/env bash $BUILD_DIR/www/.heroku/compile.sh
     rm $BUILD_DIR/www/.heroku/compile.sh
 fi
+
+echo "All done.  Will put composer here."
