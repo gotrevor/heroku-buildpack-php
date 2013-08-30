@@ -69,6 +69,13 @@ fi
 
 echo "All done.  Will put composer here."
 
+pushd /app/www/laravelSample/
+composer install
+
+echo "Composer composed."
+
+
+
 cat >>boot.sh <<EOF
 echo "Checking for WWWROOT environment variable..."
 if [ -n "\${WWWROOT:+x}" ]; then
